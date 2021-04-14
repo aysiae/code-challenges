@@ -19,7 +19,6 @@ const reverseInt = (x) => {
         }
     }
     reverse = parseInt(reverse);
-    console.log('parseInt of reverse', reverse)
     let upper = Math.pow(2,31) - 1;
     let lower = Math.pow(-2, 31);
     if(reverse > upper || reverse < lower) {

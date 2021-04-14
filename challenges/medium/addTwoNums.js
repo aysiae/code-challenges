@@ -12,7 +12,23 @@
 // Explanation:
 // 324 + 465 = 807, and 807 in reverse order is 708
 
+const LinkedList = require('../../data-structures/singly-linked-list/linked-list');
 
 const addTwo = (l1, l2) => {
+    let curr1 = l1.head;
+    // if curr.next.next is null 
+    // we set save curr.next's value, and set curr.next to null
+    let int1 = '';
+    let int2 = '';
+    while(curr1.next) {
+        if(!curr1.next.next) {
+            int1 = int1 + curr1.next.val;
+            curr1.next = null;
+            curr1 = li.head;
+        } else {
+            curr1 = curr1.next;
+        }
+    }
     
+
 }

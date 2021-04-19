@@ -9,12 +9,16 @@
 const reverseInt = (x) => {
     let nums = (''+x).split('');
     let reverse = '';
-    for(let i = nums.length - 1; i >= 0; i--) {
-        if(nums[i] != '-' && nums[0] != 0) {
-            reverse = `${reverse}${nums[i]}`
-        } else if(i == 0) {
-            if(nums[i] == '-') {
-                reverse = `-${reverse}`
+    if(nums.length === 1) {
+        reverse = nums[0]; 
+    } else {
+        for(let i = nums.length - 1; i >= 0; i--) {
+            if(nums[i] != '-' && nums[0] != 0) {
+                reverse = `${reverse}${nums[i]}`
+            } else if(i == 0) {
+                if(nums[i] == '-') {
+                    reverse = `-${reverse}`
+                }
             }
         }
     }

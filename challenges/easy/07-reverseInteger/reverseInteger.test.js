@@ -14,5 +14,9 @@ describe('reverseInt', () => {
     it('Can reverse an integer than ends in 0', () => {
         let int = 1420;
         expect(reverseInt(int)).toEqual(241);
+    });
+
+    it('Can return 0 correctly', () => {
+        expect(reverseInt(0)).toEqual(0);
     })
 })

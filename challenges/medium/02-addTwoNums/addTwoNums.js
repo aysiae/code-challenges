@@ -18,20 +18,31 @@ const addTwo = (l1, l2) => {
     let curr1 = l1.head;
     // if curr.next.next is null 
     // we set save curr.next's value, and set curr.next to null
-    let int1 = '';
-    let int2 = '';
-    while(curr1.next) {
-        if(!curr1.next.next) {
-            int1 = int1 + curr1.next.val;
-            curr1.next = null;
-            curr1 = l1.head;
+    let l1_num = traverseList(l1);
+    let l2_num = traverseList(l2);
+    let sum = parseInt(l1_num) + parseInt(l2_num);
+    sum = ''+sum;
+    sum = sum.split('');
+    let ret = new LinkedList();
+    sum.forEach(digit => ret.insert(parseInt(digit)));
+    return ret;
+
+}
+
+const traverseList = (list) => {
+    curr = list.head;
+    let int = '';
+    while(curr.next) {
+        if(!curr.next.next) {
+            int = int + curr.next.val;
+            curr.next = null;
+            curr = list.head;
         } else {
-            curr1 = curr1.next;
+            curr = curr.next;
         }
     }
-    console.log(int1);
-    return false;
-
+    int = int + list.head.val;
+    return int;
 }
 
 module.exports = addTwo;

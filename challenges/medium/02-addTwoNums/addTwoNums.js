@@ -8,14 +8,13 @@
 // List1: 2 -> 4 -> 3
 // List2: 5 -> 6 -> 4
 //Output: 
-// List: 7 -> 0 -> 8
+// List: 7 -> 9 - 8
 // Explanation:
-// 324 + 465 = 807, and 807 in reverse order is 708
+// 324 + 465 = 798, and 807 in reverse order is 708
 
 const LinkedList = require('../../../data-structures/singly-linked-list/linked-list');
 
 const addTwo = (l1, l2) => {
-    let curr1 = l1.head;
     // if curr.next.next is null 
     // we set save curr.next's value, and set curr.next to null
     let l1_num = traverseList(l1);

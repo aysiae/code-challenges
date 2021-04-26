@@ -9,6 +9,9 @@
 
 var fizzBuzz = function(n) {
     let ret = [];
+    if(n == 0) {
+        ret.push('0')       
+    }
     for(let idx = 1; idx <= n; idx++) {
         if(idx % 3 == 0 && idx % 5 == 0) {
             ret.push('FizzBuzz')

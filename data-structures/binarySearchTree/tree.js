@@ -6,22 +6,21 @@ class BinarySearchTree {
     }
 
     add(value, root=this.root) {
+        !this.root ? this.root = new TreeNode(value): null; 
         if(root) {
-            if(value > root.value) {
+            if(value > root.val) {
                 if(root.right) {
                     this.add(value, root.right)
                 } else {
-                    root.right = new TreeNode(value);
+                    root.right = new TreeNode(value)
                 }
-            } else if(value < root.value) {
+            } else if(value < root.val) {
                 if(root.left) {
-                    this.add(value, root.left)
+                    this.add(value, root.left);
                 } else {
                     root.left = new TreeNode(value);
                 }
             }
-        } else {
-            root.val = value;
         }
     }
 
@@ -29,7 +28,7 @@ class BinarySearchTree {
     preOrder(arr=[], root = this.root) {
         let ret = arr;
         if(root) {
-            ret.push(root)
+            ret.push(root.val)
             ret = this.preOrder(ret, root.left);
             ret = this.preOrder(ret, root.right);
         }
@@ -37,13 +36,13 @@ class BinarySearchTree {
     }
 
 
-    // left rigth root
+    // left right root
      postOrder(arr=[], root=this.root) {
          let ret = arr;
          if(root) {
-             ret = this.postOrder(ret, ret.left);
-             ret = this.postOrder(ret, ret.right);
-             ret.push(root);
+             ret = this.postOrder(ret, root.left);
+             ret = this.postOrder(ret, root.right);
+             ret.push(root.val);
          }
          return ret;
      }
@@ -52,9 +51,9 @@ class BinarySearchTree {
     inOrder(arr=[], root=this.root) {
         let ret = arr;
         if(root) {
-            ret = this.inOrder(ret, ret.left);
-            ret.push(root);
-            ret = this.inOrder(ret, ret.right)
+            ret = this.inOrder(ret, root.left);
+            ret.push(root.val);
+            ret = this.inOrder(ret, root.right)
         }
         return ret;
     }
@@ -62,12 +61,14 @@ class BinarySearchTree {
     contains(value, root = this.root) {
         if(!root) {
             return false;
-        } else if(value > root.val) {
-            this.contains(value, root.right);
-        } else if(value < root.val) {
-            this.contains(value, root.left);
-        } else if(value == root.val) {
-            return true;
+        } else {
+            if(value == root.val) {
+                return true;
+            } else if(value > root.val) {
+                return this.contains(value, root.right);
+            } else if(value < root.val) {
+                return this.contains(value, root.left);
+            }
         }
     }
 

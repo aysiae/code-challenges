@@ -1,5 +1,5 @@
 const BST = require('../../../data-structures/binarySearchTree/tree');
-const maxDepth = require('./maxDepthOfBinaryTree');
+const maxDepthOfBinaryTree = require('./maxDepthOfBinaryTree');
 
 describe('maxDepth', ()=>{
     let tree;
@@ -9,7 +9,7 @@ describe('maxDepth', ()=>{
     })
 
     it('Can find the max depth of an empty tree', ()=> {
-        expect(maxDepth(tree.root)).toBe(0);
+        expect(maxDepthOfBinaryTree(tree.root)).toBe(0);
     })
 
     it('Can find the max depth of a tree', () => {
@@ -18,6 +18,6 @@ describe('maxDepth', ()=>{
         tree.add(16);
         tree.add(11);
         tree.add(17);
-        expect(maxDepth(tree.root)).toBe(2);
+        expect(maxDepthOfBinaryTree(tree.root)).toBe(2);
     })
 })

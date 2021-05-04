@@ -1,8 +1,8 @@
 
 
-const maxDepthOfBinaryTree = (root, maxDepth = 0) => {
-    let right = 0;
-    let left = 0;    
+const maxDepthOfBinaryTree = (root, maxDepth = 1) => {
+    let right = 1;
+    let left = 1;    
     if(root) {
         if(!root.right && !root.left) {
             return maxDepth;
